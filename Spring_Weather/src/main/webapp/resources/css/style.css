@@ -1,0 +1,15 @@
+.wrapper {
+	width: 100%;
+	overflow: hidden;
+	
+}
+
+.nav-grid {
+	float: left;
+	width: 50% ;
+}
+
+.highcharts-figure {
+	display: inline-block;
+	width: 50%;
+}
