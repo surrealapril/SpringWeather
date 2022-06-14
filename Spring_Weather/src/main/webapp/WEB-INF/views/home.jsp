@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="../resources/css/style.css">
-<link rel="stylesheet" href="../resources/css/highchart.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/highchart.css">
 <!-- grid ui -->
 <link rel="stylesheet"
 	href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
@@ -19,8 +19,8 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
-<script src="../resources/js/grid.js" defer></script>	
-<script src="../resources/js/chart.js" defer></script>
+<script src="${pageContext.request.contextPath}/resources/js/grid.js" defer></script>	
+<script src="${pageContext.request.contextPath}/resources/js/chart.js" defer></script>
 		
 
 </head>

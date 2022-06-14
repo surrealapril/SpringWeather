@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sqls.MyWeather">
+<mapper namespace="weather">
 
 
+
+	<insert id="insert" parameterType="java.util.List">
+			INSERT INTO MYWEATHER(INSERT_DATE, BASE_DATE, BASE_TIME, FCST_DATE, FCST_TIME, REH_VAL, TMP_VAL) VALUES
+		<foreach collection="list" item="item" separator=",">
+			(now(), #{item.baseDate}, #{item.baseTime}, #{item.fcstDate},#{item.fcstTime},#{item.rehVal},#{item.tmpVal})
+		</foreach>
+		<!-- ON DUPLICATE KEY UPDATE REH_VAL = values(REH_VAL), TMP_VAL= values(TMP_VAL)-->
+		<!-- INSERT INTO MYWEATHER(FCST_DATE,FCST_TIME,CATEGORY,FCST_VALUE) VALUES 
+			<foreach collection="list" item="item" separator=","> (#{item.fcstDate},#{item.fcstTime},#{item.category},#{item.fcstValue}) 
+			</foreach> ON DUPLICATE KEY UPDATE FCST_VALUE = values(FCST_VALUE) -->
+		<!-- IF ( SELECT 1=1 FROM MYWEATHER WHERE FCST_DATE = #{item.fcstDate} 
+			AND CATEGORY = ${item.category} ) THEN BEGIN UPDATE MYWEATHER SET FCST_TIME=${item.fcstTime} 
+			, FCST_VALUE=${item.fcstValue} WHERE FCST_DATE=${item.fcstDate} AND CATEGORY=#{item.category} 
+			END ELSE BEGIN INSERT INTO MYWEATHER (BASE_DATE, BASE_TIME, CATEGORY, FCST_DATE, 
+			FCST_TIME, FCST_VALUE) VALUES ( ${item.baseDate}, ${item.baseTime}, #{item.category}, 
+			${item.fcstDate}, ${item.fcstTime}, ${item.fcstValue} ) END END IF -->
+
+
+	</insert>
+<!-- 
+CREATE TABLE MYWEATHER (
+	SEQ INT AUTO_INCREMENT PRIMARY KEY,
+	INSERT_DATE DATETIME NOT NULL,
+	BASE_DATE CHAR(8) NOT NULL,
+    BASE_TIME CHAR(4) NOT NULL,
+	FCST_DATE CHAR(8) NOT NULL,
+    FCST_TIME CHAR(4) NOT NULL,
+	REH_VAL CHAR(2) NOT NULL,
+    TMP_VAL CHAR(2) NOT NULL
+);
+
+ -->
 </mapper>

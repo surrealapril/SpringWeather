@@ -33,11 +33,28 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+
+		<!-- 트랜잭션 처리용 라이브러리 -->
+		<!-- <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency> -->
 
 		<!-- AspectJ -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjtools</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
 
@@ -60,16 +77,14 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <version>1.18.22</version>
-        <scope>provided</scope>
-    </dependency>
-    
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>provided</scope>
+		</dependency>
+
 		<dependency>
-			<!-- <groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
-			<version>1.2.15</version> -->
+			<!-- <groupId>log4j</groupId> <artifactId>log4j</artifactId> <version>1.2.15</version> -->
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.12.1</version>
@@ -93,10 +108,10 @@
 			</exclusions>
 			<!-- <scope>runtime</scope> -->
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
-		 	<artifactId>log4j-slf4j-impl</artifactId>
+			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>2.10.0</version>
 		</dependency>
 
@@ -125,7 +140,7 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-	
+
 		<!-- 마이 바티스 스프링 사용시 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -156,7 +171,7 @@
 			<artifactId>spring-jdbc</artifactId>
 			<version>5.2.9.RELEASE</version>
 		</dependency>
-		<!-- Spring test 스프링에 Mybatis가 정상적으로 연동되었는지 확인 용도-->
+		<!-- Spring test 스프링에 Mybatis가 정상적으로 연동되었는지 확인 용도 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
@@ -186,6 +201,13 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.5</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
